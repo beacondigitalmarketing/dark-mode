@@ -1,10 +1,8 @@
-// js
-// toggle stuff for theme
 const toggleSwitch = document.querySelector(
   '.theme-toggle input[type="checkbox"]'
 );
 
-function switchTheme(e) {
+function switchTheme(e) { 
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
@@ -17,6 +15,22 @@ function switchTheme(e) {
 const currentTheme = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
   : null;
+if (typeof currentTheme == "undefined"){
+  console.log("theme not stored");
+  if(matchMedia('(prefers-color-scheme: dark)').matches) {
+    console.log("prefer dark");
+          document.documentElement.setAttribute("data-theme", "dark");
+  
+          toggleSwitch.checked = true;
+    
+  }
+  else if(matchMedia('(prefers-color-scheme: light)').matches){
+    console.log("prefers light");
+          document.documentElement.setAttribute("data-theme", "light");
+          toggleSwitch.checked = false;
+  }
+  
+}
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
