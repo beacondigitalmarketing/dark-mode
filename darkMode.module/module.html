@@ -1,15 +1,33 @@
-<div class="cards">
-  {% for card in module.card %}
-  <div class="cards__card card">
-    {% if card.image.src %}
-    <div class="card__image">
-      <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" width="{{ card.image.width }}" height="{{ card.image.height }}">
+ <header class="">
+    <div class="header-inner page-center flex">
+      <h1>Dark Mode Demo</h1>
+      <div class="theme-toggle flex">
+        <label for="checkbox">
+          <input type="checkbox" name="checkbox" class="theme-switch">
+          <div class="slider round"></div>
+        </label>
+      </div>
     </div>
-    {% endif %}
-    <div class="card__text">
-      <h4>{% inline_text field="title" value="{{ card.title }}" %}</h4>
-      <p>{% inline_text field="text" value="{{ card.text }}" %}</p>
-    </div>
-  </div>
-  {% endfor %}
-</div>
+  </header>
+  <main>
+    <section class="page-center">
+      <h2>Articles</h2>
+      <div class="flex container">
+        <article>
+          <img src="https://fillmurray.com/300/305" alt="">
+          <h4>Article Title</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur eaque perspiciatis voluptatem modi cum, enim consequuntur? Quasi assumenda tenetur, reprehenderit dignissimos, quam, esse excepturi voluptatum ad molestias ratione blanditiis.</p>
+        </article>
+        <article>
+          <img src="https://fillmurray.com/300/300" alt="">
+          <h4>Article Title</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum tenetur maxime nulla non dignissimos architecto ea voluptates, eum assumenda necessitatibus sit suscipit consequuntur? Voluptatem minus consequatur provident asperiores ullam totam.</p>
+        </article>
+        <article>
+          <img src="https://fillmurray.com/300/304" alt="">
+          <h4>Article Title</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus praesentium deserunt non ad, voluptatibus error aliquam magni minima sit omnis impedit earum quidem asperiores explicabo? Fugiat temporibus explicabo nemo saepe.</p>
+        </article>
+      </div>
+    </section>
+  </main>
