@@ -55,6 +55,7 @@ header {
   justify-content: space-between;
 }
 main {
+  display: block
 }
 main .container {
   -webkit-box-pack: justify;
@@ -179,4 +180,8 @@ html[data-theme="dark"] article {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+   /* IE10+ specific styles go here */  
+   .theme-toggle {display: none}
 }

@@ -1,5 +1,5 @@
 "use strict";
-
+document.createElement("main");
 var toggleSwitch = document.querySelector(
   '.theme-toggle input[type="checkbox"]'
 );
